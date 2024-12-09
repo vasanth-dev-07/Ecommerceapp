@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from apps.common.manager import BaseObjectManagerQuerySet
 
 COMMON_CHAR_FEILD_MAX_LENGTH = 512
 COMMON_NULLABLE_FEILD_CONFIG = {
@@ -21,4 +22,8 @@ class BaseModel(models.Model):
     modified = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
     is_delete = models.BooleanField(default=False)
+    object = BaseObjectManagerQuerySet.as_manager()
+
+    class Meta :
+        abstract = True
 
