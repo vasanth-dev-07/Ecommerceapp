@@ -6,10 +6,6 @@ from django.core.exceptions import (
 )
 
 
-
-
-
-
 class BaseObjectManagerQuerySet(QuerySet):
     """
        The main/base manager for the apps models. This is used for including common
